@@ -853,3 +853,23 @@ section { min-height: 100vh; padding: 10vh 8%; display: flex; flex-direction: co
     }
 }
 
+/* Handy-Optimierung */
+@media (max-width: 768px) {
+    .bento-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
+    }
+
+    .bento-item {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 300px; /* Verhindert, dass das Bild zu klein wird */
+    }
+
+    .profile-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover; /* Sorgt dafür, dass das Bild nicht verzerrt */
+    }
+}
