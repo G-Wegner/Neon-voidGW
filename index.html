@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eternal-rendersGW.com</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="loader">
+    <div class="loader-content">
+        <img src="Portfolio_Logo.png" alt="Logo" class="loader-logo">
+        
+        <div class="percent-container">
+            <span class="counter">0</span><span class="symbol">%</span>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+</div>
+
+<nav class="main-nav">
+        <img src="Portfolio_Logo.png" alt="Logo" class="site-logo">
+    </nav>
+
+<section class="hero-content">
+    <div class="hero-text reveal">
+        <h1>Gerrit<br>Wegner</h1>
+        <p>Design // Print // Games Design</p>
+    </div>
+</section>
+
+
+    <canvas id="bg"></canvas>
+
+   <div id="project-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-window"> 
+        <button class="close-x" onclick="closeModal()">×</button>
+        
+        <div class="modal-grid-container">
+            <div class="modal-info-side">
+                <h2 id="modal-title">Projekt Titel</h2>
+                <p id="modal-desc">Beschreibung</p>
+            </div>
+
+            <div class="modal-gallery-side">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <main>
+        <section class="about">
+            <div class="bento-grid">
+               <div class="bento-item profile">
+                 <img src="IMG_2231.jpg" alt="Gerrit Wegner" class="profile-img">
+</div>
+                <div class="bento-item info">
+        <h2 class="about-title">About Me</h2>
+        
+        <div class="about-text-box">
+            <p class="lead-text-en">
+                My name is <strong>Gerrit</strong>, and I am from the Black Forest. I am currently pursuing an education in Stuttgart as a <strong>Media Designer</strong>, specializing in digital and print design with a focus on animation and visualization.
+            </p>
+            
+            <p class="main-body-en">
+                My work combines technical understanding with a strong creative approach. For over <strong>three years</strong>, I have been deeply engaged in 3D design and real-time visualization, working with tools such as <strong>Blender and Unreal Engine</strong>.
+            </p>
+            
+            <p class="main-body-en">
+                Alongside my studies, I am independently developing my own game project, <strong>“Eternal Dread.”</strong> Through this project, I bring together my skills in game design, 3D modeling, and visual design. Creativity is not just part of my education, but a core element of my daily work.
+            </p>
+        </div>
+    </div>
+                <div class="bento-item tech">
+                    <h3>Stack</h3>
+                    <div class="tags">
+                        <span>Website Design</span>
+                        <span>Unreal Engine</span>
+                        <span>Blender</span>
+                        <span>Wordpress</span>
+                        <span>Photoshop</span>
+                        <span>Illustrator</span>
+                        <span>InDesign</span>
+                        <span>VisualStudio</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <section class="projects">
+            <h2 class="section-title">My Projects</h2>
+            <div class="slider-container">
+                <button class="nav-btn prev" onclick="moveSlider(-1)">❮</button>
+                
+                <div class="carousel" id="project-carousel">
+                  <div class="project-card" style="background-image: url('Fabric.png');" 
+     onclick="openProject('My Materials (Blender)', 'This material was created entirely procedurally in Blender using multiple layered Wave and Noise textures to achieve a realistic fabric surface. Different scales and directions of the wave patterns were combined to recreate the fine woven structure of the cloth. To add more depth and realism, the textures were blended using Multiply, Add, and ColorRamp nodes, driving both the color variation and bump detail. This shader is based on a Principled BSDF with carefully adjusted roughness and bump values to achieve a soft fabric look.', 'Fabric.png', 'FabricChairZoom_.png', 'FabricChairZoomSite_.png')">
+    <div class="card-content"><span>01</span><h4>My Materials (Blender)</h4></div>
+</div>
+
+                <div class="project-card" style="background-image: url('McLarenLight.png');" 
+     onclick="openProject('Automotive', 
+     '<span class=\'description-body\'>A high-fidelity digital twin of a McLaren, focusing on the interplay of light and aerodynamic form. This project pushes the boundaries of real-time rendering to capture the essence of automotive excellence.</span><br><br><span class=\'highlight-text\'>Digital Sculpting</span><span class=\'description-body\'>Precision modeling in Blender with a focus on class-A surfaces and perfect curvature continuity.</span><br><span class=\'highlight-text\'>Lighting Tech</span><span class=\'description-body\'>A multi-layer lighting setup in Unreal Engine 5 using Lumen for dynamic, physically accurate reflections.</span><br><span class=\'highlight-text\'>Materials</span><span class=\'description-body\'>Custom carbon fiber and multi-coat metallic shaders developed to react dynamically to environment light.</span>', 
+     'McLarenFrontSide.png', 'McLarenFront.png', 'McLarenLight.png', 'McLarenUpside.png', 'McLarenSide.png')">
+    <div class="card-content"><span>02</span><h4>Automotive (Blender)</h4></div>
+</div>
+
+
+<div class="project-card" style="background-image: url('Bar_final_Picture (2).png');" 
+     onclick="openProject('Bar Am See', 
+     '<span class=\'description-body\'>A fusion of organic nature and sharp modernism. This project explores the boundary between interior comfort and the vastness of a sunset horizon.</span><br><br><span class=\'highlight-text\'>Modeling</span><span class=\'description-body\'>Custom furniture and architectural elements crafted in Blender for a bespoke luxury feel.</span><br><span class=\'highlight-text\'>Atmosphere</span><span class=\'description-body\'>Advanced HDRI-lighting to simulate the golden hour’s interaction with glass and marble.</span><br><span class=\'highlight-text\'>Post-Processing</span><span class=\'description-body\'>Color grading focused on the symbiosis of warm sunset hues and cool interior tones.</span>', 
+     'Bar_final_Picture (2).png', 'BarAmSee_Roh.png')">
+    <div class="card-content"><span>03</span><h4>School Project 1 (Blender)</h4></div>
+</div>
+
+
+               <div class="project-card" style="background-image: url('Cover_LaptopFinal.png');" 
+     onclick="openProject('School Project: ROG Zephyrus', 
+     '<span class=\'description-body\'>For this school assignment, I chose to push my technical limits by modeling the complex Asus ROG Zephyrus G16 Duo. Instead of a standard laptop, I tackled this dual-screen high-performance machine to master intricate mechanical hinges and complex surface transitions.</span><br><br><span class=\'highlight-text\'>Modeling Challenge</span><span class=\'description-body\'>High-poly reconstruction of the unique dual-screen tilting mechanism and precision-engineered cooling vents in Blender.</span><br><span class=\'highlight-text\'>Material Design</span><span class=\'description-body\'>Recreating the premium magnesium-alloy finish and the distinctive RGB-lit keyboard using custom PBR shaders.</span><br><span class=\'highlight-text\'>Mechanical Realism</span><span class=\'description-body\'>Focus on realistic component articulation and hardware details to ensure a believable industrial design representation.</span>', 
+     'Cover_LaptopFinal.png', 'Laptop_oben.png', 'Laptop_side_inputs.png', 'Laptop_side.png', 'Laptop_2Screen.png', 'Laptop_KeysNight.png', 'Cover_Laptop.png', '0001-0097.mp4', 'ff32eeb9-02ad-44c0-98d2-54de4399b964.mp4')">
+    <div class="card-content"><span>04</span><h4>School Project 2 (Blender)</h4></div>
+</div>
+                    <!-- Box 05 -->
+                    <div class="project-card" style="background-image: url('projekt5.jpg');" 
+                         onclick="openProject('Deep Space', 'Beschreibung für Deep Space...', 'projekt5.jpg')">
+                        <div class="card-content"><span>05</span><h4>Deep Space</h4></div>
+                    </div>
+
+                    <!-- Box 06 -->
+                    <div class="project-card" style="background-image: url('projekt6.jpg');" 
+                         onclick="openProject('Bio Tech', 'Beschreibung für Bio Tech...', 'projekt6.jpg')">
+                        <div class="card-content"><span>06</span><h4>Bio Tech</h4></div>
+                    </div>
+
+                    <!-- Box 07 -->
+                    <div class="project-card" style="background-image: url('projekt7.jpg');" 
+                         onclick="openProject('Eco Smart', 'Beschreibung für Eco Smart...', 'projekt7.jpg')">
+                        <div class="card-content"><span>07</span><h4>Eco Smart</h4></div>
+                    </div>
+
+                    <!-- Box 08 -->
+                    <div class="project-card" style="background-image: url('projekt8.jpg');" 
+                         onclick="openProject('Nova App', 'Beschreibung für Nova App...', 'projekt8.jpg')">
+                        <div class="card-content"><span>08</span><h4>Coming soon...</h4></div>
+                    </div>
+                </div>
+
+                <button class="nav-btn next" onclick="moveSlider(1)">❯</button>
+            </div>
+ </section>
+
+<section class="project-deep-dive" id="eternal-dread">
+    <div class="dive-container">
+        <div class="dive-visual">
+            <div class="glass-card visual-inner">
+                <div class="video-placeholder">
+                  <div class="video-placeholder" style="background-image: url('Eternal_DreadCover.png'); background-size: cover; background-position: center; border-radius: 10px;">
+    </div>
+                </div>
+            </div>
+        </div>
+
+      <div class="dive-info">
+    <p class="section-label">Origin & Mission</p>
+    <h2 class="project-title">Eternal Dread</h2>
+
+    <div class="dive-text">
+        <p class="lead-text">
+            Die Idee zu <strong>„Eternal Dread“</strong> entspringt meiner tiefen Leidenschaft für Videospiele. Als Gamer war es schon immer mein Traum, nicht nur in fremde Welten einzutauchen, sondern selbst zum Schöpfer dieser Welten zu werden. Mein Ziel ist es, Teil der Games-Branche zu sein und die interaktiven Erlebnisse von morgen aktiv mitzugestalten.
+        </p>
+
+        <p class="main-body">
+            Schon bevor ich meine Ausbildung zum Mediengestalter für Digital- und Printmedien mit Schwerpunkt Animation und Visualisierung begonnen habe, habe ich mich intensiv mit Blender und der Unreal Engine beschäftigt. Mein Antrieb war von Anfang an, meine kreative Ader nicht nur visuell zu nutzen, sondern Erlebnisse zu entwickeln, die Atmosphäre, Spannung und Technik miteinander verbinden.
+        </p>
+            <p class="main-body">
+                Aus ersten Experimenten entwickelte sich <strong>„Eternal Dread“</strong> – ein atmosphärisches Zombie-Wellen-Survival-Game in den 80er Jahren. Ich setze alle Bereiche eigenständig um: von der Gestaltung der Spielwelt über das Leveldesign bis hin zur technischen Implementierung in der Engine. Jede Zeile Logik und jedes Mesh ist ein Beweis für meinen Anspruch, die komplette Pipeline der Spieleentwicklung zu durchdringen.
+            </p>
+            <p class="main-body">
+    „Eternal Dread“ ist ein Ergebnis dieses Prozesses... 
+    <strong>Mein Ziel ist es, die grafischen Möglichkeiten der Unreal Engine 5 so konsequent zu nutzen, dass die visuelle Qualität mit modernen AAA-Produktionen mithalten kann.</strong> 
+    Besonders durch den Einsatz von Realtime-Raytracing und hochdetaillierten Assets schaffe ich eine Immersion, die weit über einen klassischen Indie-Titel hinausgeht.
+</p>
+        </div>
+
+        <p class="main-body">
+            Durch gezielte Lichtstimmungen und detaillierte Umgebungen entsteht eine Welt, die den Spieler in ihren Bann zieht. Für mich ist dieses Projekt der entscheidende Schritt auf meinem Weg, als <strong>Game Designer</strong> Fuß in der Branche zu fassen und meinen Traum Wirklichkeit werden zu lassen.
+        </p>
+    </div>
+</div>
+
+</section>
+    </main>
+
+    <footer class="minimal-footer">
+    <div class="footer-main">
+        <div class="footer-left">
+            <h2 class="footer-title">Let's create something<br><span class="cyan-glow">extraordinary.</span></h2>
+        </div>
+        
+        <div class="footer-right">
+            <div class="contact-box">
+                <span class="label">Contact</span>
+                <a href="mailto:deine-email@beispiel.de" class="email-link">gerritwegner325@gmail.com</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">ArtStation</a>
+                <a href="#" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span>&copy; 2026 Gerrit Wegner</span>
+        <div class="status">
+            <span class="status-dot"></span>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>
